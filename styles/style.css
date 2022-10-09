@@ -20,7 +20,8 @@ html, body {
     position: absolute;
     top: 275px;
     padding-left: 40px;
-    font-family: "Comic Neue", sans-serif;
+    font-size: 16pt;
+    font-family: 'Comic Neue', cursive;
     
 }
 
@@ -121,7 +122,7 @@ text-align: center;
 }
 
 .button-text-main{
-    font-family: Jost, sans-serif;
+    font-family: "Jost", sans-serif;
     font-style: italic;
     font-weight: 800;
     font-size: 16px;

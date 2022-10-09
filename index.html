@@ -25,10 +25,9 @@
     <!--MAIN CARD-->
     <div>    
         <img src="img/card.svg">
-        <div class="card-title">
-        </div>
+        <div class="card-title"></div>
         <div class="card-detail"></div>
-        <div class="text">
+        <div class="text" id="text"> Тестовий текст
         </div>
         <!--<div class="fade"><img src="img/fade.svg"></div>-->   
     </div>
@@ -55,7 +54,7 @@
                <img src="img/circle-previous.svg">
             </td>
             <td>
-                <a href="" onclick="newCard()"><img src="img/circle-next.svg"></a> 
+                <a href="" onclick="newCard(cards);"><img src="img/circle-next.svg"></a> 
             </td>
             <td>
                 <img src="img/help.svg">
@@ -63,6 +62,6 @@
         </tr>
     </table>
     <!--END OF FOOTER-->
-    <script src="scripts/script.js"></script>
+    <script type="module" src="scripts/script.js"></script>
 </body>
 </html>

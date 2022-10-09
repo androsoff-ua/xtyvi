@@ -1,28 +1,45 @@
-
-//textTitle.innerHTML = task.text[3];
-//textField.innerHTML = '<strong>Тестовий</strong> текст завдання, який буде тут знаходитись.';
-
 function getRandomInRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  
+import cards from "../json/card1.json" assert {type: 'json'};
 
-function newCard () {
-    let task = {
-        id: [1,2,3,4,5],
-        title: ['Картка 1', 'Картка 2', 'Картка 3', 'Картка 4', 'Картка 5'],
-        text: ['Текст завдання 1','Текст завдання 2','Текст завдання 3','Текст завдання 4','Текст завдання 5']
-    }
-
-
-let textTitle = document.querySelector('.card-title');
-let textField = document.querySelector('.text');
-    
-let i = getRandomInRange (0,4);
-
-textTitle.innerHTML = task.title[i];
-textField.innerHTML = task.text[i];
+async function elementUpdate(selector) {
+  try {
+    var html = await (await fetch(location.href)).text();
+    var newdoc = new DOMParser().parseFromString(html, 'text/html');
+    document.querySelector(selector).outerHTML = newdoc.querySelector(selector).outerHTML;
+    console.log('Элемент '+selector+' был успешно обновлен');
+    return true;
+  } catch(err) {
+    console.log('При обновлении элемента '+selector+' произошла ошибка:');
+    console.dir(err);
+    return false;
+  }
 }
 
-newCard();
+function newCard (cards) {
+let title = document.querySelector('.card-title');
+let textField = document.querySelector('.text');
+let i = getRandomInRange (0,4);
+//let i = 3;
+let img = document.createElement('img');
+img.src = cards.cards[i].img;
+
+textField.innerHTML = cards.cards[i].text;
+textField.appendChild(img);
+title.innerHTML = cards.cards[i].title;
+
+}
+
+function smartRandom(min,max) {
+let num=[];
+for (let i=min; i<=max; i++){
+num[i] = getRandomInRange(min,max);
+console.log(num[i]);
+
+}
+}
+
+smartRandom(0,2);
+newCard(cards);
