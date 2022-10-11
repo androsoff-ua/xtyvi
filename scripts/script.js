@@ -44,9 +44,21 @@ $('#next').click(function(){
   else{
     console.log("Все!");
   }
+})
+})
 
-})
-})
+$(document).ready(function(){
+  $('#previous').click(function(){
+    if(index!=0){
+        index--;
+        showCard(cards,num,index);
+        console.log("Index ["+index+"] = "+num[index]);
+    }
+    else{
+      console.log("Все!");
+    }
+  })
+  })
 
 
 

@@ -51,16 +51,25 @@
         </tr>
         <tr>
             <td>
-               <img src="img/circle-previous.svg">
+               <img src="img/circle-previous.svg" id="previous">
             </td>
             <td>
                 <img src="img/circle-next.svg" id="next">
             </td>
             <td>
-                <img src="img/help.svg">
+                <a href="#popup"><img src="img/help.svg"></a>
             </td>
         </tr>
     </table>
+    <div class="popup" id="popup">
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close">X</a>
+                <div class="popup_title">Правила і допомога</div>
+                <div class="popup_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vitae quisquam accusamus quia a quibusdam eius minus, ipsum rem cum unde saepe aut similique harum, nam voluptas eaque inventore eum.</div>
+            </div>
+        </div>
+    </div>
     <!--END OF FOOTER-->
     <script src="libs/jquery/jquery-3-6-1.js"></script>
     <script type="module" src="scripts/script.js"></script>
